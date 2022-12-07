@@ -121,90 +121,97 @@ for (characters = 0; characters < starWarsCharacters.length; characters++) {
   {name: Leia Organa, hair_color: "brown", eye_color: "brown"}
 */
 
-femaleCharacters = [];
-for (i = 0; i < starWarsCharacters.length; i++) {
+let femaleCharacters = [];
+for (let i = 0; i < starWarsCharacters.length; i++) {
     if (starWarsCharacters[i].gender === "female") {
-        femaleCharacters.push(starWarsCharacters[i]);
+        let oggetto = {
+            name: starWarsCharacters[i].name,
+            hair_color: starWarsCharacters[i].hair_color,
+            eye_color: starWarsCharacters[i].eye_color,
+        };
+        femaleCharacters.push(oggetto);
     }
-    console.log(femaleCharacters);
 }
+console.log(femaleCharacters);
 
 /* ESERCIZIO 4
-      Crea un oggetto "eyeColor" che abbia come proprietà: blue, yellow, brown, red, blue-gray.
-      ognuna di queste proprietà contiene un array vuoto
-    */
+          Crea un oggetto "eyeColor" che abbia come proprietà: blue, yellow, brown, red, blue-gray.
+          ognuna di queste proprietà contiene un array vuoto
+        */
 
 const eyeColor = {
     blue: [],
     yellow: [],
     brown: [],
     red: [],
-    "blue-gray": [],
+    "blue - gray": [],
 };
 /* ESERCIZIO 5
-  Inserisci l'oggetto dei personaggi in "starWarsCharacters" nell'array corrispondente al colore dei loro occhi nell'oggetto "eyeColor" precedentemente creato.
-   Utilizza uno switch statement per determinare in quale proprietà inserire il personaggio
-    */
-
-switch (starWarsCharacters.eye_color) {
-    case "blue":
-        eyeColor.push(starWarsCharacters);
-        break;
-    case "yellow":
-        eyeColor.push(starWarsCharacters);
-        break;
-    case "brown":
-        eyeColor.push(starWarsCharacters);
-        break;
-    case "red":
-        eyeColor.push(starWarsCharacters);
-        break;
-    case "blue-gray":
-        eyeColor.push(starWarsCharacters);
+      Inserisci l'oggetto dei personaggi in "starWarsCharacters" nell'array corrispondente al colore dei loro occhi nell'oggetto "eyeColor" precedentemente creato.
+       Utilizza uno switch statement per determinare in quale proprietà inserire il personaggio
+        */
+let index = 0;
+while (index < starWarsCharacters.length) {
+    switch (starWarsCharacters.eye_colors) {
+        case "blue":
+            eyeColor.push(starWarsCharacters[index]);
+            break;
+        case "yellow":
+            eyeColor.push(starWarsCharacters[index]);
+            break;
+        case "brown":
+            eyeColor.push(starWarsCharacters[index]);
+            break;
+        case "red":
+            eyeColor.push(starWarsCharacters[index]);
+            break;
+        case "blue - gray":
+            eyeColor.push(starWarsCharacters[index]);
+    }
+    index++;
 }
-
 console.log(eyeColor);
 
 /* ESERCIZIO 6
-   Usa un while loop per calcolare la massa totale dell'equipaggio
-  */
+       Usa un while loop per calcolare la massa totale dell'equipaggio
+      */
 
-let numero = 0;
+/*let numero = 0;
 let i = 0;
 while (numero <= 958) {
     numero = numero + starWarsCharacters[i].mass;
     i = i + 1;
 }
-console.log(numero);
+console.log(numero);*/
 /* ESERCIZIO 7
 
-    Crea uno switch statement per rivelare la tipologia di carico, utilizzando la massa totale, di un'impotetica astronave contenente i personaggi dell'array "starWarsCharacters"
-    (cerca su un motore di ricerca switch case e conditionals)
+        Crea uno switch statement per rivelare la tipologia di carico, utilizzando la massa totale, di un'impotetica astronave contenente i personaggi dell'array "starWarsCharacters"
+        (cerca su un motore di ricerca switch case e conditionals)
 
-    Se la massa è inferiore a 500 stampa in console: "Ship is under loaded",
-    Se la massa è uguale a 500 stampa in console: "Ship is half loaded",
-    Se la massa è superiore a 700 stampa in console: "Warning: Load is over 700",
-    Se la massa è superiore a 900 stampa in console: "Critical Load: Over 900",
-    Se la massa è superiore a 1000 stampa in console: "DANGER! OVERLOAD ALERT: Jump ship now!"
+        Se la massa è inferiore a 500 stampa in console: "Ship is under loaded",
+        Se la massa è uguale a 500 stampa in console: "Ship is half loaded",
+        Se la massa è superiore a 700 stampa in console: "Warning: Load is over 700",
+        Se la massa è superiore a 900 stampa in console: "Critical Load: Over 900",
+        Se la massa è superiore a 1000 stampa in console: "DANGER! OVERLOAD ALERT: Jump ship now!"
 
-    Una volta fatto, modifica la massa di qualche elemento dell'equipaggio e vedi se riesci ad ottenere un messaggio diverso.
-    */
+        Una volta fatto, modifica la massa di qualche elemento dell'equipaggio e vedi se riesci ad ottenere un messaggio diverso.
+        */
 
 /* ESERCIZIO 8
 
-    Usa un for loop per cambiare il valore della proprietà "gender" di alcuni personaggi dal valore "n/a" a "robot" (Tip: puoi creare un nuovo array, o tentare la riassegnazione del valore corrispondente)
-    */
+        Usa un for loop per cambiare il valore della proprietà "gender" di alcuni personaggi dal valore "n/a" a "robot" (Tip: puoi creare un nuovo array, o tentare la riassegnazione del valore corrispondente)
+        */
 
 /* EXTRA ESERCIZIO 9
 
-    Utilizzando gli elementi presenti nell'array "femaleCharacters" rimuovi dall'array "characters" le stringhe corrispondenti a personaggi con lo stesso nome"
-    Usa uno più for loop per raggiungere il risultato
+        Utilizzando gli elementi presenti nell'array "femaleCharacters" rimuovi dall'array "characters" le stringhe corrispondenti a personaggi con lo stesso nome"
+        Usa uno più for loop per raggiungere il risultato
 
-    (tip: cerca un metodo degli array per rimuovere un elemento)
+        (tip: cerca un metodo degli array per rimuovere un elemento)
 
-    Una volta fatto, crea un console.log() per controllare la proprietà length di "characters" prima e dopo l'operazione
-    */
+        Una volta fatto, crea un console.log() per controllare la proprietà length di "characters" prima e dopo l'operazione
+        */
 
 /* EXTRA ESERCIZIO 10
 
-    Crea una funzionalità che prenda un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo*/
+        Crea una funzionalità che prenda un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo*/
